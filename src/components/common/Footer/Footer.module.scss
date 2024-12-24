@@ -1,0 +1,37 @@
+.footer__container{
+  background-color: #f8f8f8;
+  .footer__left{
+
+  }
+  .footer__right{
+
+  }
+  .footer__center{
+
+  }
+  .footer__bottom{
+
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+  }
+  .social__links{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease-in-out;
+      &:hover{
+        background-color: #ccc;
+      }
+    }
+  }
+}

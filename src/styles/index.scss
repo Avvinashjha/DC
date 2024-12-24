@@ -1,0 +1,15 @@
+@import './global/reset';      // Reset or normalize styles
+@import './global/_variables';  // SCSS variables (colors, typography, etc.)
+@import './global/mixins';     // Mixins for reusability
+@import './global/typography'; // Global typography styles
+
+/* Base styles */
+body {
+  /* Example from _variables.scss */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}

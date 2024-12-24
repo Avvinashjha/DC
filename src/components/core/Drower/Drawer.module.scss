@@ -1,0 +1,73 @@
+/* Drawer.module.scss */
+
+/* Container for the drawer and backdrop */
+.drawerContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Backdrop styling */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Ensure it appears below the drawer */
+}
+
+/* Drawer styles */
+.drawer {
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 1rem;
+  transition: transform 0.3s ease-in-out; /* Adds smooth slide-in/out transition */
+  height: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+
+  /* Drawer positions */
+  &.left {
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    transform: translateX(-100%); /* Default hidden state for "left" */
+  }
+
+  &.right {
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    transform: translateX(100%); /* Default hidden state for "right" */
+  }
+
+  &.top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    transform: translateY(-100%); /* Default hidden state for "top" */
+  }
+
+  &.bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    transform: translateY(100%); /* Default hidden state for "bottom" */
+  }
+
+  /* When open, the transform is reset */
+  &.left,
+  &.right,
+  &.top,
+  &.bottom {
+    transform: translateX(0);
+  }
+}

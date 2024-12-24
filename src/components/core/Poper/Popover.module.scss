@@ -1,0 +1,79 @@
+/* Popover.module.scss */
+
+.popover {
+  position: absolute;
+  z-index: 10;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-in-out;
+  max-width: 240px;
+
+  /* Arrow (pointing towards the trigger) */
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+}
+
+/* Position Specific */
+.top {
+  transform: translateY(-110%);
+  &::before {
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0 5px;
+    border-color: #ddd transparent transparent transparent;
+  }
+}
+
+.right {
+  transform: translateX(110%);
+  &::before {
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 5px 5px 5px 0;
+    border-color: transparent #ddd transparent transparent;
+  }
+}
+
+.bottom {
+  transform: translateY(110%);
+  &::before {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #ddd transparent;
+  }
+}
+
+.left {
+  transform: translateX(-110%);
+  &::before {
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent #ddd;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
